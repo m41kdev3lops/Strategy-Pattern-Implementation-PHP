@@ -2,17 +2,17 @@
 
 require 'vendor/autoload.php';
 
-use App\SimpleDuck;
-use App\RubberDuck;
+use App\Duck;
 
-print("Simple Duck \n");
-$simpleDuck = new SimpleDuck;
+print("----- \n");
+$simpleDuck = new Duck("simple");
 $simpleDuck->fly();
 $simpleDuck->quack();
 
-print("\n");
+print("----- \n");
 
-print("Rubber Duck \n");
-$rubberDuck = new RubberDuck;
+$rubberDuck = new Duck("rubber");
 $rubberDuck->fly();
 $rubberDuck->quack();
+
+print("----- \n");

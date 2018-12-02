@@ -1,14 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Ducks;
 
-use App\Duck;
 use App\Traits\JetFlyTrait;
 use App\Traits\SimpleFlyTrait;
 
 use App\Traits\SimpleQuackTrait;
 
-class SimpleDuck extends Duck
+class SimpleDuck
 {
     use SimpleQuackTrait;
     use SimpleFlyTrait;
