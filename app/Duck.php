@@ -3,26 +3,16 @@
 namespace App;
 
 use App\Interfaces\FlyInterface;
+use App\Interfaces\DuckInterface;
 use App\Interfaces\QuackInterface;
 
 class Duck implements FlyInterface, QuackInterface
 {
-    protected $availableTypes = ['rubber', 'simple'];
     protected $duck;
 
-    public function __construct( string $type )
+    public function __construct( DuckInterface $duck )
     {
-        if ( ! in_array($type, $this->availableTypes) ) throw new Exception("{$type} is NOT a valid Duck Type");
-
-        $duckClass = $this->resolveDuckClass($type);
-
-        $this->duck = new $duckClass;
-    }
-
-
-    protected function resolveDuckClass( string $className )
-    {
-        return "App\\Ducks\\" . ucfirst($className) . "Duck";
+        $this->duck = $duck;
     }
 
 
